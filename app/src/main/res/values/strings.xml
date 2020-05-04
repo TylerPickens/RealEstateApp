@@ -11,4 +11,5 @@
     <string name="bathrooms">Enter Number of Bathrooms</string>
     <string name="all_fields_are_required_for_each_search">All fields are required for each search</string>
     <string name="search_listings">Search Listings</string>
+    <string name="invalid_state">Please enter a 2 character state code</string>
 </resources>
