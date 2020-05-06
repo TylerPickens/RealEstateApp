@@ -15,12 +15,14 @@ import com.android.volley.toolbox.Volley
 import com.android.volley.toolbox.JsonObjectRequest
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.UiSettings
 import edu.wtamu.cis.realestateapp.R.id.inputCity
 import edu.wtamu.cis.realestateapp.R.layout.input_fragment
 import kotlinx.android.synthetic.main.input_fragment.*
+import kotlinx.android.synthetic.main.realtor_api_fragment.*
 import org.json.JSONObject
 
 class RealtorAPIFragment() : Fragment() {
@@ -42,10 +44,22 @@ class RealtorAPIFragment() : Fragment() {
         val view = inflater?.inflate(R.layout.realtor_api_fragment, container, false)
 
         return view
+
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        val searchButton: Button? = view?.findViewById(R.id.homeButton)
+        homeButton?.setOnClickListener{ v: View -> onButtonClick(v)}
+
     }
 
     val url = "https://realtor.p.rapidapi.com/properties/v2/list-for-sale"
-    val apiKey = "a64b87987bmsh797afa8ba78477dp160032jsn5106e6850af1"
+    val apiKey = "API_KEY"
 
     val jasonObjectRequest = object : JsonObjectRequest(Request.Method.GET, url, null,
         Response.Listener<JSONObject> { response ->
@@ -71,7 +85,7 @@ class RealtorAPIFragment() : Fragment() {
 //    override fun getHeaders(): Map<String, String> {
 //        val params: MutableMap<String, String> = HashMap()
 //        params["x-rapidapi-host"] =  "realtor.p.rapidapi.com"
-//        params["x-rapidapi-key"] = "a64b87987bmsh797afa8ba78477dp160032jsn5106e6850af1"
+//        params["x-rapidapi-key"] = "API_KEY"
 //
 //        return params
 //    }
