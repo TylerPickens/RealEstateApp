@@ -14,15 +14,13 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val inputFragment = InputFragment()
 
-        setCurrentFragment(inputFragment)
+
+
+
+
 
     }
 
-    private fun setCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragmentContainer, fragment)
-            commit()
-        }
+
 }

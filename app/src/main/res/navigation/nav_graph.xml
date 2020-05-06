@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/inputFragment">
+
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="edu.wtamu.cis.realestateapp.InputFragment"
+        android:label="InputFragment" >
+        <action
+            android:id="@+id/action_inputFragment_to_realtorAPIFragment"
+            app:destination="@id/realtorAPIFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/realtorAPIFragment"
+        android:name="edu.wtamu.cis.realestateapp.RealtorAPIFragment"
+        android:label="RealtorAPIFragment" >
+        <action
+            android:id="@+id/action_realtorAPIFragment_to_inputFragment"
+            app:destination="@id/inputFragment" />
+    </fragment>
+</navigation>
