@@ -81,6 +81,17 @@ class RealtorAPIFragment() : Fragment() {
         })
 
 
+    private fun onButtonClick(v: View) {
+
+
+        when(v!!.id) {
+
+            R.id.homeButton -> navController!!.navigate(R.id.action_realtorAPIFragment_to_inputFragment)
+
+        }
+    }
+
+
 
 //    override fun getHeaders(): Map<String, String> {
 //        val params: MutableMap<String, String> = HashMap()
